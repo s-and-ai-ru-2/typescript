@@ -1,0 +1,69 @@
+node=v24.21.0  python=3.14.6
+--- jest output ---
+PASS ./bowling.test.ts
+  Bowling
+    Check game can be scored correctly.
+      ✓ should be able to score a game with all zeros (1 ms)
+      ✓ should be able to score a game with no strikes or spares
+      ✓ a spare followed by zeros is worth ten points
+      ✓ points scored in the roll after a spare are counted twice
+      ✓ consecutive spares each get a one roll bonus
+      ✓ a spare in the last frame gets a one roll bonus that is counted once
+      ✓ a strike earns ten points in a frame with a single roll
+      ✓ points scored in the two rolls after a strike are counted twice as a bonus
+      ✓ consecutive strikes each get the two roll bonus
+      ✓ a strike in the last frame gets a two roll bonues that is counted once
+      ✓ rolling a spare with the two roll bonus does not get a bonus roll
+      ✓ strikes with the two roll bonus do not get bonus rolls
+      ✓ last two strikes followed by only last bonus with non strike points
+      ✓ a strike with the one roll bonus after a spare in the last frame does not get a bonus
+      ✓ all strikes is a perfect game
+    Check game rules.
+      ✓ rolls cannot score negative points (5 ms)
+      ✓ a roll cannot score more than 10 points
+      ✓ two rolls in a frame cannot score more than 10 points
+      ✓ bonus roll after a strike in the last frame cannot score more than 10 points
+      ✓ two bonus rolls after a strike in the last frame cannot score more than 10 points
+      ✓ two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike
+      ✓ the second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike (1 ms)
+      ✓ second bonus roll after a strike in the last frame cannot score more than 10 points
+      ✓ an unstarted game cannot be scored
+      ✓ an incomplete game cannot be scored
+      ✓ cannot roll if game already has ten frames
+      ✓ bonus rolls for a strike in the last frame must be rolled before score can be calculated
+      ✓ both bonus rolls for a strike in the last frame must be rolled before score can be calculated (1 ms)
+      ✓ bonus roll for a spare in the last frame must be rolled before score can be calculated
+      ✓ cannot roll after bonus roll for spare
+      ✓ cannot roll after bonus rolls for strike
+
+Test Suites: 1 passed, 1 total
+Tests:       31 passed, 31 total
+Snapshots:   0 total
+Time:        0.231 s
+Ran all test suites.
+
+PASS: 31 tests ran
+PASS: jest exit code 0
+PASS: learner stub unchanged
+
+--- named cases via approach2 ---
+  case:     should be able to score a game with all zeros
+  input:    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  expected: 0
+  actual:   0
+  PASS
+
+  case:     should be able to score a game with no strikes or spares
+  input:    [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]
+  expected: 90
+  actual:   90
+  PASS
+
+  case:     a spare followed by zeros is worth ten points
+  input:    [6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  expected: 10
+  actual:   10
+  PASS
+
+Total tests run: 31
+RESULT: PASS
