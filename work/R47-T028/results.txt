@@ -1,0 +1,52 @@
+node=v24.21.0  python=3.14.6
+--- jest output ---
+PASS ./split-second-stopwatch.test.ts
+  SplitSecondStopwatch
+    ✓ new stopwatch starts in ready state (1 ms)
+    ✓ new stopwatch's current lap has no elapsed time
+    ✓ new stopwatch's total has no elapsed time
+    ✓ new stopwatch does not have previous laps (1 ms)
+    ✓ start from ready state changes state to running
+    ✓ start does not change previous laps
+    ✓ start initiates time tracking for current lap
+    ✓ start initiates time tracking for total
+    ✓ start cannot be called from running state (3 ms)
+    ✓ stop from running state changes state to stopped (1 ms)
+    ✓ stop pauses time tracking for current lap
+    ✓ stop pauses time tracking for total
+    ✓ stop cannot be called from ready state
+    ✓ stop cannot be called from stopped state
+    ✓ start from stopped state changes state to running
+    ✓ start from stopped state resumes time tracking for current lap
+    ✓ start from stopped state resumes time tracking for total
+    ✓ lap adds current lap to previous laps
+    ✓ lap resets current lap and resumes time tracking
+    ✓ lap continues time tracking for total
+    ✓ lap cannot be called from ready state
+    ✓ lap cannot be called from stopped state
+    ✓ stop does not change previous laps
+    ✓ reset from stopped state changes state to ready
+    ✓ reset resets current lap
+    ✓ reset clears previous laps
+    ✓ reset cannot be called from ready state
+    ✓ reset cannot be called from running state (1 ms)
+    ✓ supports very long laps
+
+Test Suites: 1 passed, 1 total
+Tests:       29 passed, 29 total
+Snapshots:   0 total
+Time:        0.223 s
+Ran all test suites.
+
+PASS: 29 tests ran
+PASS: jest exit code 0
+PASS: learner stub unchanged
+
+--- config path checks ---
+PASS: real config — all paths valid
+PASS: missing-reference fixture failed as expected — example does not exist: .meta/proof.ci.ts
+PASS: missing-test fixture failed as expected — test does not exist: split-second-stopwatch.test.ts
+PASS: outside-exercise path fixture failed as expected — parent traversal in solution: ../../../etc/passwd
+
+Total tests run: 29
+RESULT: PASS
