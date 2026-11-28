@@ -1,0 +1,124 @@
+node=v24.21.0  python=3.14.6
+
+--- run 1: real reference (expect PASS) ---
+PASS ./nucleotide-count.test.ts
+  count all nucleotides in a strand
+    ✓ empty strand (1 ms)
+    ✓ can count one nucleotide in single-character input
+    ✓ strand with repeated nucleotide
+    ✓ strand with multiple nucleotides
+    ✓ strand with invalid nucleotides (2 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        0.211 s
+Ran all test suites.
+
+  exit code: 0  tests: 5
+  PASS: learner stub unchanged
+  PASS: success run correct
+
+--- run 2: deliberately failing reference (expect FAIL) ---
+FAIL ./nucleotide-count.test.ts
+  count all nucleotides in a strand
+    ✕ empty strand
+    ✕ can count one nucleotide in single-character input
+    ✕ strand with repeated nucleotide
+    ✕ strand with multiple nucleotides
+    ✕ strand with invalid nucleotides (6 ms)
+
+  ● count all nucleotides in a strand › empty strand
+
+    deliberate fail
+
+    > 1 | export function nucleotideCounts(strand: string): any { throw new Error('deliberate fail') }
+        |                                                               ^
+      2 |
+
+      at nucleotideCounts (nucleotide-count.ts:1:63)
+      at Object.<anonymous> (nucleotide-count.test.ts:12:28)
+
+  ● count all nucleotides in a strand › can count one nucleotide in single-character input
+
+    deliberate fail
+
+    > 1 | export function nucleotideCounts(strand: string): any { throw new Error('deliberate fail') }
+        |                                                               ^
+      2 |
+
+      at nucleotideCounts (nucleotide-count.ts:1:63)
+      at Object.<anonymous> (nucleotide-count.test.ts:22:28)
+
+  ● count all nucleotides in a strand › strand with repeated nucleotide
+
+    deliberate fail
+
+    > 1 | export function nucleotideCounts(strand: string): any { throw new Error('deliberate fail') }
+        |                                                               ^
+      2 |
+
+      at nucleotideCounts (nucleotide-count.ts:1:63)
+      at Object.<anonymous> (nucleotide-count.test.ts:32:28)
+
+  ● count all nucleotides in a strand › strand with multiple nucleotides
+
+    deliberate fail
+
+    > 1 | export function nucleotideCounts(strand: string): any { throw new Error('deliberate fail') }
+        |                                                               ^
+      2 |
+
+      at nucleotideCounts (nucleotide-count.ts:1:63)
+      at Object.<anonymous> (nucleotide-count.test.ts:43:23)
+
+  ● count all nucleotides in a strand › strand with invalid nucleotides
+
+    expect(received).toThrow(expected)
+
+    Expected substring: "Invalid nucleotide in strand"
+    Received message:   "deliberate fail"
+
+        > 1 | export function nucleotideCounts(strand: string): any { throw new Error('deliberate fail') }
+            |                                                               ^
+          2 |
+
+      at nucleotideCounts (nucleotide-count.ts:1:63)
+      at nucleotide-count.test.ts:52:23
+      at Object.<anonymous> (../../../../../../../../Users/riyansh/.yarn/berry/cache/expect-npm-29.7.0-62e9f7979e-10.zip/node_modules/expect/build/toThrowMatchers.js:74:11)
+      at Object.throwingMatcher [as toThrow] (../../../../../../../../Users/riyansh/.yarn/berry/cache/expect-npm-29.7.0-62e9f7979e-10.zip/node_modules/expect/build/index.js:320:21)
+      at Object.toThrow (nucleotide-count.test.ts:53:8)
+      at Object.toThrow (nucleotide-count.test.ts:53:8)
+
+Test Suites: 1 failed, 1 total
+Tests:       5 failed, 5 total
+Snapshots:   0 total
+Time:        0.217 s
+Ran all test suites.
+
+  exit code: 1  tests: 5
+  PASS: learner stub unchanged
+  PASS: failing reference correctly exits non-zero
+
+--- run 3: empty test file (expect zero tests / FAIL) ---
+FAIL ./nucleotide-count.test.ts
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (.yarn/__virtual__/@jest-core-virtual-57851f9294/9/Users/riyansh/.yarn/berry/cache/@jest-core-npm-29.7.0-cef60d74c4-10.zip/node_modules/@jest/core/build/TestScheduler.js:133:18)
+      at ../../../../../../../../Users/riyansh/.yarn/berry/cache/emittery-npm-0.13.1-cb6cd1bb03-10.zip/node_modules/emittery/index.js:363:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (../../../../../../../../Users/riyansh/.yarn/berry/cache/emittery-npm-0.13.1-cb6cd1bb03-10.zip/node_modules/emittery/index.js:361:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.199 s
+Ran all test suites.
+
+  exit code: 1  tests: 0
+  PASS: learner stub unchanged
+  PASS: zero-test run correctly detected
+
+RESULT: PASS
